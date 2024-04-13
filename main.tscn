@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://74blkqjmssgr"]
+[gd_scene load_steps=6 format=3 uid="uid://74blkqjmssgr"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_uruoq"]
 [ext_resource type="PackedScene" uid="uid://d17wk0n3p86sd" path="res://map.tscn" id="2_211ay"]
 [ext_resource type="PackedScene" uid="uid://5jqcychw4wpw" path="res://player.tscn" id="2_o2x7w"]
-[ext_resource type="PackedScene" uid="uid://eia61wwgijm2" path="res://inventory.tscn" id="3_i7ylp"]
+[ext_resource type="PackedScene" uid="uid://eia61wwgijm2" path="res://ui/inventory.tscn" id="3_i7ylp"]
+[ext_resource type="PackedScene" uid="uid://bgfqdlm4dlr6p" path="res://battle.tscn" id="5_nkqgs"]
 
 [node name="Main" type="Node2D"]
 y_sort_enabled = true
@@ -15,5 +16,8 @@ script = ExtResource("1_uruoq")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Control" parent="CanvasLayer" instance=ExtResource("3_i7ylp")]
+[node name="Inventory" parent="CanvasLayer" instance=ExtResource("3_i7ylp")]
 visible = false
+
+[node name="Battle" parent="." instance=ExtResource("5_nkqgs")]
+position = Vector2(-3619, -543)

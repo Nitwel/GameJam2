@@ -24,3 +24,6 @@ func _drop_data(at_position, data):
 	var temp = data.item_place.texture
 	data.item_place.texture = item_place.texture
 	item_place.texture = temp
+
+func get_item():
+	return item_place.texture
