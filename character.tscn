@@ -8,33 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://bsvpxgm6q3oep" path="res://assets/Foot_Basic.svg" id="5_safjj"]
 [ext_resource type="Texture2D" uid="uid://dwklge7xw45ea" path="res://assets/Extrimity_Basic2.svg" id="6_nyjwt"]
 
-[sub_resource type="Animation" id="Animation_84ryd"]
-resource_name = "hit"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Skeleton2D/Hip/Chest/ArmL:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, -1.00781]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Skeleton2D/Hip/Chest/ArmL/ForearmL:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, -1.61792]
-}
-
 [sub_resource type="Animation" id="Animation_ugyik"]
 length = 0.001
 tracks/0/type = "value"
@@ -84,6 +57,33 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_84ryd"]
+resource_name = "hit"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skeleton2D/Hip/Chest/ArmL:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -1.00781]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Skeleton2D/Hip/Chest/ArmL/ForearmL:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -1.61792]
 }
 
 [sub_resource type="Animation" id="Animation_rnxvq"]
@@ -306,12 +306,10 @@ rest = Transform2D(-0.999982, -0.00599842, 0.00599842, -0.999982, -18, 143)
 
 [node name="LegL" type="Bone2D" parent="Skeleton2D/Hip"]
 position = Vector2(55, 14)
-scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, 55, 14)
 
 [node name="LowerLegL" type="Bone2D" parent="Skeleton2D/Hip/LegL"]
 position = Vector2(39, 87)
-scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, 39, 87)
 
 [node name="FootL" type="Bone2D" parent="Skeleton2D/Hip/LegL/LowerLegL"]
@@ -323,3 +321,5 @@ libraries = {
 "": SubResource("AnimationLibrary_ahfqf")
 }
 playback_default_blend_time = 0.2
+
+[node name="Test" type="Node2D" parent="."]
