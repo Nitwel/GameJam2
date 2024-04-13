@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://74blkqjmssgr"]
+[gd_scene load_steps=7 format=3 uid="uid://74blkqjmssgr"]
 
 [ext_resource type="Texture2D" uid="uid://b6nj3va08db48" path="res://assets/tileset.png" id="1_l1l4v"]
+[ext_resource type="Script" path="res://main.gd" id="1_uruoq"]
 [ext_resource type="PackedScene" uid="uid://5jqcychw4wpw" path="res://player.tscn" id="2_o2x7w"]
 [ext_resource type="PackedScene" uid="uid://eia61wwgijm2" path="res://inventory.tscn" id="3_i7ylp"]
 
@@ -153,6 +154,7 @@ physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_wa4hw")
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_uruoq")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(2, 0)
@@ -165,3 +167,4 @@ layer_0/tile_data = PackedInt32Array(-65536, 1, 0, 0, 1, 0, 1, 1, 0, 2, 1, 0, 3,
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Control" parent="CanvasLayer" instance=ExtResource("3_i7ylp")]
+visible = false
