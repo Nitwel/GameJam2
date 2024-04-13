@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://74blkqjmssgr"]
 
 [ext_resource type="Texture2D" uid="uid://b6nj3va08db48" path="res://assets/tileset.png" id="1_l1l4v"]
-[ext_resource type="PackedScene" uid="uid://5jqcychw4wpw" path="res://player.tscn" id="2_o2x7w"]
+[ext_resource type="PackedScene" path="res://player.tscn" id="2_o2x7w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wa4hw"]
 resource_name = "background"
