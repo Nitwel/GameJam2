@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @export var speed: float = 40000
+@onready var action_area := $BushArea
 
 func _physics_process(delta):
 
@@ -13,3 +14,6 @@ func _physics_process(delta):
         velocity = Vector2.ZERO
 
     move_and_slide()
+
+    if action_area.has_overlapping_bodies():
+        print("Overlapping")
