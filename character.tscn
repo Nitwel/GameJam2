@@ -1,6 +1,7 @@
-[gd_scene load_steps=22 format=3 uid="uid://c7cinvg4thke4"]
+[gd_scene load_steps=24 format=3 uid="uid://c7cinvg4thke4"]
 
 [ext_resource type="Texture2D" uid="uid://b6gavcyc2pjxd" path="res://assets/Extrimity_Basic.svg" id="1_00lww"]
+[ext_resource type="Script" path="res://character.gd" id="1_fdlnb"]
 [ext_resource type="Texture2D" uid="uid://b4x3nltwnitgp" path="res://assets/Extrimity_Spike.svg" id="1_ujqca"]
 [ext_resource type="Texture2D" uid="uid://ds32cve4l302s" path="res://assets/Hand_Basic.svg" id="2_8io3m"]
 [ext_resource type="Texture2D" uid="uid://bv1xugj1jlk1u" path="res://assets/Extrimity_Mutant.svg" id="2_ijg0f"]
@@ -570,9 +571,18 @@ _data = {
 "punsh": SubResource("Animation_b28xw")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ifr0v"]
+bg_color = Color(0.101961, 0.890196, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [node name="Character" type="Node2D"]
+script = ExtResource("1_fdlnb")
 
 [node name="BodyParts" type="Node2D" parent="."]
+position = Vector2(21, -28)
 
 [node name="ArmR" type="Node2D" parent="BodyParts"]
 
@@ -925,6 +935,7 @@ polygons = [PackedInt32Array(0, 7, 8, 9), PackedInt32Array(1, 6, 7, 0), PackedIn
 bones = ["Hip", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/Chest", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/Chest/Neck", PackedFloat32Array(0, 0, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0), "Hip/Chest/Neck/Head", PackedFloat32Array(0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5), "Hip/Chest/ArmR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/Chest/ArmR/ForearmR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/Chest/ArmR/ForearmR/HandR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/Chest/ArmL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/Chest/ArmL/ForearmL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/Chest/ArmL/ForearmL/HandL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/LegR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/LegR/LowerLegR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/LegR/LowerLegR/FootR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/LegL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/LegL/LowerLegL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/LegL/LowerLegL/FootL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
 
 [node name="Skeleton2D" type="Skeleton2D" parent="."]
+position = Vector2(21, -28)
 
 [node name="Hip" type="Bone2D" parent="Skeleton2D"]
 position = Vector2(-23, -245)
@@ -969,7 +980,7 @@ rest = Transform2D(1, 0, 0, 1, 50, 72)
 [node name="HandL" type="Bone2D" parent="Skeleton2D/Hip/Chest/ArmL/ForearmL"]
 position = Vector2(9, 98)
 rotation = 0.0840159
-scale = Vector2(2.29641, 1)
+scale = Vector2(2.29641, 0.999999)
 rest = Transform2D(2.28831, 0.192708, -0.0839168, 0.996473, 9, 98)
 
 [node name="LegR" type="Bone2D" parent="Skeleton2D/Hip"]
@@ -983,7 +994,7 @@ rest = Transform2D(1, 0, 0, 1, -31, 81)
 [node name="FootR" type="Bone2D" parent="Skeleton2D/Hip/LegR/LowerLegR"]
 position = Vector2(-18, 143)
 rotation = -3.13559
-scale = Vector2(1, 1)
+scale = Vector2(0.999999, 0.999999)
 rest = Transform2D(-0.999982, -0.00599842, 0.00599842, -0.999982, -18, 143)
 
 [node name="LegL" type="Bone2D" parent="Skeleton2D/Hip"]
@@ -1002,3 +1013,25 @@ rest = Transform2D(1, 0, 0, 1, 9, 140)
 libraries = {
 "": SubResource("AnimationLibrary_gs87w")
 }
+playback_default_blend_time = 0.3
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Regen" type="Timer" parent="."]
+autostart = true
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+custom_minimum_size = Vector2(300, 0)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.0
+offset_top = -766.0
+offset_right = 150.0
+offset_bottom = -726.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/fill = SubResource("StyleBoxFlat_ifr0v")
+step = 1.0
+show_percentage = false

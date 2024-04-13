@@ -13,19 +13,6 @@ extends Control
 @onready var hand_r = $MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/Monster/HandR
 @onready var hand_l = $MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/Monster/HandL
 
-@onready var part_map = {
-	"Head": head,
-	"Torso": torso,
-	"LegR": leg_r,
-	"LegL": leg_l,
-	"FootL": feet_l,
-	"FootR": feet_r,
-	"ArmR": arm_r,
-	"ArmL": arm_l,
-	"HandR": hand_r,
-	"HandL": hand_l
-}
-
 var disabled = false:
 	set(value):
 		disabled = value
@@ -46,5 +33,16 @@ func _process(delta):
 		visible = !visible
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE if visible else Input.MOUSE_MODE_CAPTURED)
 
-func get_item(body_part: String):
-	return part_map[body_part].get_item()
+func get_body() -> Body:
+	var body = Body.new()
+	body.head = head.item
+	body.torso = torso.item
+	body.left_leg = leg_l.item
+	body.right_leg = leg_r.item
+	body.left_foot = feet_l.item
+	body.right_foot = feet_r.item
+	body.left_arm = arm_l.item
+	body.right_arm = arm_r.item
+	body.left_hand = hand_l.item
+	body.right_hand = hand_r.item
+	return body

@@ -8,8 +8,11 @@ script = ExtResource("1_8n75d")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="Player" parent="." instance=ExtResource("1_t822e")]
-position = Vector2(-332, 287)
+[node name="Player" parent="." node_paths=PackedStringArray("enemy") instance=ExtResource("1_t822e")]
+position = Vector2(-200, 290)
+enemy = NodePath("../Enemy")
 
-[node name="Enemy" parent="." instance=ExtResource("1_t822e")]
-position = Vector2(263, 290)
+[node name="Enemy" parent="." node_paths=PackedStringArray("enemy") instance=ExtResource("1_t822e")]
+position = Vector2(205, 291)
+scale = Vector2(-1, 1)
+enemy = NodePath("../Player")
