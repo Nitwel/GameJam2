@@ -10,9 +10,10 @@ script = ExtResource("1_8n75d")
 
 [node name="Player" parent="." node_paths=PackedStringArray("enemy") instance=ExtResource("1_t822e")]
 position = Vector2(-200, 290)
+base_health = 1000.0
 enemy = NodePath("../Enemy")
 
 [node name="Enemy" parent="." node_paths=PackedStringArray("enemy") instance=ExtResource("1_t822e")]
 position = Vector2(205, 291)
-scale = Vector2(-1, 1)
+flipped = true
 enemy = NodePath("../Player")

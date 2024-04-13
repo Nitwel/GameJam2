@@ -1,18 +1,9 @@
-[gd_scene load_steps=26 format=3 uid="uid://eia61wwgijm2"]
+[gd_scene load_steps=7 format=3 uid="uid://eia61wwgijm2"]
 
 [ext_resource type="FontVariation" uid="uid://cht0lhbb6rug8" path="res://assets/icon.tres" id="1_5fasr"]
 [ext_resource type="Script" path="res://ui/inventory.gd" id="1_xf7jg"]
-[ext_resource type="Script" path="res://item.gd" id="3_bq83a"]
 [ext_resource type="PackedScene" uid="uid://c5v7bfdsm3pgn" path="res://ui/slot.tscn" id="3_d2j0m"]
-[ext_resource type="Texture2D" uid="uid://b8qgc7ke4kxty" path="res://assets/Body_Spike.svg" id="3_geuhc"]
-[ext_resource type="Texture2D" uid="uid://b6gavcyc2pjxd" path="res://assets/Extrimity_Basic.svg" id="4_wtdj3"]
-[ext_resource type="Texture2D" uid="uid://bv1xugj1jlk1u" path="res://assets/Extrimity_Mutant.svg" id="5_7v7o7"]
-[ext_resource type="Texture2D" uid="uid://bsvpxgm6q3oep" path="res://assets/Foot_Basic.svg" id="6_eto4o"]
-[ext_resource type="Texture2D" uid="uid://ds32cve4l302s" path="res://assets/Hand_Basic.svg" id="7_567sn"]
-[ext_resource type="Texture2D" uid="uid://cbjvqmxh4gc0v" path="res://assets/Head_Spike.svg" id="8_k5cjo"]
-[ext_resource type="Texture2D" uid="uid://c26jjqyatecuo" path="res://assets/Hand_Mutant.svg" id="8_ubnsn"]
-[ext_resource type="Texture2D" uid="uid://br42ftxmojpmf" path="res://assets/Foot_Mutant.svg" id="10_usap6"]
-[ext_resource type="Texture2D" uid="uid://b4x3nltwnitgp" path="res://assets/Extrimity_Spike.svg" id="12_q66ft"]
+[ext_resource type="PackedScene" uid="uid://bsatf5hbpv82" path="res://tooltip.tscn" id="14_k1nk8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n0d7x"]
 content_margin_left = 20.0
@@ -24,106 +15,6 @@ corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
-
-[sub_resource type="Resource" id="Resource_o4d8t"]
-script = ExtResource("3_bq83a")
-texture = ExtResource("3_geuhc")
-part = 2
-damage = 0.0
-armor = 0.0
-health = 0.0
-attack_speed = 0.0
-health_regen = 0.8
-
-[sub_resource type="Resource" id="Resource_27kt3"]
-script = ExtResource("3_bq83a")
-texture = ExtResource("4_wtdj3")
-part = 5
-damage = 0.0
-armor = 0.0
-health = 0.0
-attack_speed = 0.0
-health_regen = 0.0
-
-[sub_resource type="Resource" id="Resource_n5xx8"]
-script = ExtResource("3_bq83a")
-texture = ExtResource("6_eto4o")
-part = 3
-damage = 0.0
-armor = 0.0
-health = 0.0
-attack_speed = 0.0
-health_regen = 0.0
-
-[sub_resource type="Resource" id="Resource_s4npi"]
-script = ExtResource("3_bq83a")
-texture = ExtResource("7_567sn")
-part = 4
-damage = 0.0
-armor = 0.0
-health = 0.0
-attack_speed = 0.0
-health_regen = 0.0
-
-[sub_resource type="Resource" id="Resource_36klf"]
-script = ExtResource("3_bq83a")
-texture = ExtResource("8_k5cjo")
-part = 1
-damage = 0.0
-armor = 0.0
-health = 0.0
-attack_speed = 0.0
-health_regen = 0.0
-
-[sub_resource type="Resource" id="Resource_v2akb"]
-script = ExtResource("3_bq83a")
-texture = ExtResource("5_7v7o7")
-part = 5
-damage = 0.0
-armor = 0.0
-health = 0.0
-attack_speed = 0.0
-health_regen = 0.0
-
-[sub_resource type="Resource" id="Resource_fi0g2"]
-script = ExtResource("3_bq83a")
-texture = ExtResource("10_usap6")
-part = 3
-damage = 0.0
-armor = 0.0
-health = 0.0
-attack_speed = 0.0
-health_regen = 0.0
-
-[sub_resource type="Resource" id="Resource_hr7r2"]
-script = ExtResource("3_bq83a")
-texture = ExtResource("8_ubnsn")
-part = 4
-damage = 0.0
-armor = 0.0
-health = 0.0
-attack_speed = 0.0
-health_regen = 0.0
-
-[sub_resource type="Resource" id="Resource_wcdi7"]
-script = ExtResource("3_bq83a")
-texture = ExtResource("12_q66ft")
-part = 5
-damage = 0.0
-armor = 0.0
-health = 0.0
-attack_speed = 0.0
-health_regen = 0.0
-
-[sub_resource type="Resource" id="Resource_b1qhy"]
-script = ExtResource("3_bq83a")
-texture = ExtResource("4_wtdj3")
-part = 5
-damage = 0.0
-armor = 0.0
-health = 0.0
-attack_speed = 0.0
-health_regen = 0.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_7dl1p"]
 font = ExtResource("1_5fasr")
@@ -334,38 +225,30 @@ columns = 5
 
 [node name="Slot2" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("3_d2j0m")]
 layout_mode = 2
-item = SubResource("Resource_o4d8t")
 
 [node name="Slot3" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("3_d2j0m")]
 layout_mode = 2
-item = SubResource("Resource_27kt3")
 
 [node name="Slot4" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("3_d2j0m")]
 layout_mode = 2
-item = SubResource("Resource_n5xx8")
 
 [node name="Slot5" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("3_d2j0m")]
 layout_mode = 2
-item = SubResource("Resource_s4npi")
 
 [node name="Slot6" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("3_d2j0m")]
 layout_mode = 2
-item = SubResource("Resource_36klf")
 
 [node name="Slot7" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("3_d2j0m")]
 layout_mode = 2
 
 [node name="Slot8" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("3_d2j0m")]
 layout_mode = 2
-item = SubResource("Resource_v2akb")
 
 [node name="Slot9" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("3_d2j0m")]
 layout_mode = 2
-item = SubResource("Resource_fi0g2")
 
 [node name="Slot10" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("3_d2j0m")]
 layout_mode = 2
-item = SubResource("Resource_hr7r2")
 
 [node name="Slot11" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("3_d2j0m")]
 layout_mode = 2
@@ -375,7 +258,6 @@ layout_mode = 2
 
 [node name="Slot13" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("3_d2j0m")]
 layout_mode = 2
-item = SubResource("Resource_wcdi7")
 
 [node name="Slot14" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("3_d2j0m")]
 layout_mode = 2
@@ -391,7 +273,6 @@ layout_mode = 2
 
 [node name="Slot18" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("3_d2j0m")]
 layout_mode = 2
-item = SubResource("Resource_b1qhy")
 
 [node name="Slot19" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("3_d2j0m")]
 layout_mode = 2
@@ -438,3 +319,6 @@ text = "close"
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="Tooltip" parent="." instance=ExtResource("14_k1nk8")]
+layout_mode = 0

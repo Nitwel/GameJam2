@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://c7cinvg4thke4"]
+[gd_scene load_steps=25 format=3 uid="uid://c7cinvg4thke4"]
 
 [ext_resource type="Texture2D" uid="uid://b6gavcyc2pjxd" path="res://assets/Extrimity_Basic.svg" id="1_00lww"]
 [ext_resource type="Script" path="res://character.gd" id="1_fdlnb"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://bv1xugj1jlk1u" path="res://assets/Extrimity_Mutant.svg" id="2_ijg0f"]
 [ext_resource type="Texture2D" uid="uid://g2id0yidtyer" path="res://assets/Body_Basic.svg" id="3_g7wi1"]
 [ext_resource type="Texture2D" uid="uid://ctux7x2tbrqso" path="res://assets/Hand_Spike.svg" id="4_i4cyp"]
-[ext_resource type="Texture2D" uid="uid://mdc6lm1cs4by" path="res://assets/Kopf_Basic.svg" id="4_oluxb"]
 [ext_resource type="Texture2D" uid="uid://bsvpxgm6q3oep" path="res://assets/Foot_Basic.svg" id="5_safjj"]
 [ext_resource type="Texture2D" uid="uid://b8qgc7ke4kxty" path="res://assets/Body_Spike.svg" id="5_wkb65"]
 [ext_resource type="Texture2D" uid="uid://c26jjqyatecuo" path="res://assets/Hand_Mutant.svg" id="6_4j6hy"]
@@ -15,7 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://br42ftxmojpmf" path="res://assets/Foot_Mutant.svg" id="9_skbm7"]
 [ext_resource type="Texture2D" uid="uid://cbjvqmxh4gc0v" path="res://assets/Head_Spike.svg" id="10_dwnlk"]
 [ext_resource type="Texture2D" uid="uid://boi8b088fe22i" path="res://assets/Body_Mutant.svg" id="12_jq4xi"]
-[ext_resource type="Texture2D" uid="uid://c5cixqooe1eyr" path="res://assets/Kopf_Mutant.svg" id="15_v6flr"]
+[ext_resource type="Texture2D" uid="uid://cx6iup5ua7tmq" path="res://assets/Head_Basic.svg" id="14_7j23i"]
+[ext_resource type="Texture2D" uid="uid://c5cixqooe1eyr" path="res://assets/Head_Mutant.svg" id="16_tedch"]
 
 [sub_resource type="Animation" id="Animation_86xwy"]
 length = 0.001
@@ -578,6 +578,13 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s63vk"]
+bg_color = Color(0.145098, 0.145098, 0.145098, 0.756863)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
 [node name="Character" type="Node2D"]
 script = ExtResource("1_fdlnb")
 
@@ -906,7 +913,7 @@ bones = ["Hip", PackedFloat32Array(0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5, 0, 0,
 visible = false
 position = Vector2(-132, -684)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("4_oluxb")
+texture = ExtResource("14_7j23i")
 skeleton = NodePath("../../../Skeleton2D")
 polygon = PackedVector2Array(355.047, 722.368, 595.837, 678.947, 735.311, 473.684, 716.89, 210.526, 573.468, 30.2632, 456.363, 0, 210.311, 5.26316, 82.679, 67.1053, -29.1631, 247.368, -19.9526, 501.316, 152.416, 682.895)
 uv = PackedVector2Array(355.047, 722.368, 595.837, 678.947, 735.311, 473.684, 716.89, 210.526, 573.468, 30.2632, 456.363, 0, 210.311, 5.26316, 82.679, 67.1053, -29.1631, 247.368, -19.9526, 501.316, 152.416, 682.895)
@@ -927,7 +934,7 @@ bones = ["Hip", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "H
 [node name="Head_Mutant" type="Polygon2D" parent="BodyParts/Head"]
 position = Vector2(-130, -685)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("15_v6flr")
+texture = ExtResource("16_tedch")
 skeleton = NodePath("../../../Skeleton2D")
 polygon = PackedVector2Array(140.711, 25.0333, -48.1777, 280.589, -14.8444, 531.383, 221.663, 736.144, 478.806, 734.557, 694.679, 548.843, 745.473, 286.938, 621.663, 53.6048, 408.965, -30.5222, 240.711, -22.5857)
 uv = PackedVector2Array(140.711, 25.0333, -48.1777, 280.589, -14.8444, 531.383, 221.663, 736.144, 478.806, 734.557, 694.679, 548.843, 745.473, 286.938, 621.663, 53.6048, 408.965, -30.5222, 240.711, -22.5857)
@@ -980,7 +987,7 @@ rest = Transform2D(1, 0, 0, 1, 50, 72)
 [node name="HandL" type="Bone2D" parent="Skeleton2D/Hip/Chest/ArmL/ForearmL"]
 position = Vector2(9, 98)
 rotation = 0.0840159
-scale = Vector2(2.29641, 0.999999)
+scale = Vector2(2.29641, 0.999996)
 rest = Transform2D(2.28831, 0.192708, -0.0839168, 0.996473, 9, 98)
 
 [node name="LegR" type="Bone2D" parent="Skeleton2D/Hip"]
@@ -1030,8 +1037,32 @@ offset_top = -766.0
 offset_right = 150.0
 offset_bottom = -726.0
 grow_horizontal = 2
+pivot_offset = Vector2(150, 20)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/fill = SubResource("StyleBoxFlat_ifr0v")
 step = 1.0
 show_percentage = false
+
+[node name="PanelContainer" type="PanelContainer" parent="ProgressBar"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 10.185
+offset_top = -30.0
+offset_right = 70.185
+offset_bottom = 30.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s63vk")
+
+[node name="Label" type="Label" parent="ProgressBar/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 40
+text = "1"
+horizontal_alignment = 1

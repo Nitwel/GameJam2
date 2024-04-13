@@ -8,6 +8,7 @@ class_name BattleCharacter
 @onready var regen_timer = $Regen
 @onready var bar = $ProgressBar
 @onready var animation = $AnimationPlayer
+@onready var level_label = $ProgressBar/PanelContainer/Label
 
 @export var base_health: float = 100
 @export var base_armor: float = 10
@@ -34,11 +35,22 @@ var damage = 10
 var attack_speed = 1
 var health_regen = 0
 var active = false
+@export var flipped = false:
+	set(value):
+		flipped = value
+
+		if !is_inside_tree():
+			return
+
+		scale.x = -1 if flipped else 1
+		bar.scale.x = -1 if flipped else 1
 
 @export var enemy: BattleCharacter
 @export var body: Body
 
 func _ready():
+	flipped = flipped
+
 	regen_timer.timeout.connect(func():
 		if !active:
 			return
@@ -62,15 +74,18 @@ func start(body: Body):
 	self.body = body
 	load_from_inventory()
 
-	health = base_health + body.get_stat("health")
+	max_health = base_health + body.get_stat("health")
 	armor = base_armor + body.get_stat("armor")
 	damage = base_damage + body.get_stat("damage")
 	attack_speed = base_attack_speed + body.get_stat("attack_speed")
 	health_regen = body.get_stat("health_regen")
+	health = max_health
 
-	max_health = health
+	print("Player: ", " ".join([health, armor, damage, attack_speed, health_regen]))
 
 	active = true
+
+	level_label.text = str(floor(body.level))
 
 	timer.wait_time = 1.0 / attack_speed
 	timer.start()
@@ -83,7 +98,7 @@ func load_from_inventory():
 			mesh.visible = mesh.texture == item.texture
 
 func take_damage(amount):
-	health -= amount * (1 - armor / 100.0)
+	health -= amount * (100 / (100 + armor))
 	if health <= 0:
 		active = false
-		main.battle.game_over()
+		main.battle.battle_over(self)

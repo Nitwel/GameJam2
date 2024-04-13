@@ -20,4 +20,4 @@ script = ExtResource("1_uruoq")
 visible = false
 
 [node name="Battle" parent="." instance=ExtResource("5_nkqgs")]
-position = Vector2(-3619, -543)
+position = Vector2(534, -448)

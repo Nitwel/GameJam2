@@ -13,17 +13,33 @@ extends Control
 @onready var hand_r = $MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/Monster/HandR
 @onready var hand_l = $MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/Monster/HandL
 
+@onready var inventory = $MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/GridContainer
+@onready var tooltip = $Tooltip
+
 var disabled = false:
 	set(value):
 		disabled = value
 		visible = !value
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE if disabled else Input.MOUSE_MODE_CAPTURED)
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE if visible else Input.MOUSE_MODE_CAPTURED)
 
 func _ready():
+	tooltip.visible = false
 	close_btn.pressed.connect(func():
 		visible=false
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	)
+
+	var start_body = Body.get_random_body(25)
+	head.item = start_body.head
+	torso.item = start_body.torso
+	leg_r.item = start_body.left_leg
+	leg_l.item = start_body.right_leg
+	feet_l.item = start_body.left_foot
+	feet_r.item = start_body.right_foot
+	arm_r.item = start_body.left_arm
+	arm_l.item = start_body.right_arm
+	hand_r.item = start_body.left_hand
+	hand_l.item = start_body.right_hand
 
 func _process(delta):
 	if disabled:
@@ -32,6 +48,13 @@ func _process(delta):
 	if Input.is_action_just_pressed("inventory"):
 		visible = !visible
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE if visible else Input.MOUSE_MODE_CAPTURED)
+
+func add_item(item: Item):
+	for slot in inventory.get_children():
+		if slot.item == null:
+			slot.item = item
+			return true
+	return false
 
 func get_body() -> Body:
 	var body = Body.new()

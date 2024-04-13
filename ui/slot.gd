@@ -1,7 +1,7 @@
-@tool
-
 extends Panel
 class_name UISlot
+
+@onready var main := $"/root/Main"
 
 @onready var item_place = $ItemPlace
 @export var delete = false
@@ -15,8 +15,24 @@ class_name UISlot
 		update()
 @export var slot_type: Item.Part = Item.Part.NONE
 
+var hovering = false
+
 func _ready():
 	update()
+
+	mouse_entered.connect(func():
+		hovering=true
+	)
+
+	mouse_exited.connect(func():
+		hovering=false
+		main.inventory.tooltip.item=null
+	)
+
+func _input(event):
+	if event is InputEventMouseMotion&&hovering&&item:
+		main.inventory.tooltip.position = event.global_position
+		main.inventory.tooltip.item = item
 
 func update():
 	if item:
