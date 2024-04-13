@@ -8,8 +8,8 @@ script = ExtResource("1_8n75d")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="Character" parent="." instance=ExtResource("1_t822e")]
+[node name="Player" parent="." instance=ExtResource("1_t822e")]
 position = Vector2(-332, 287)
 
-[node name="Character2" parent="." instance=ExtResource("1_t822e")]
+[node name="Enemy" parent="." instance=ExtResource("1_t822e")]
 position = Vector2(263, 290)

@@ -5,4 +5,4 @@ extends Node2D
 @onready var enemy = $Enemy
 
 func start():
-    player.load_from_inventory()
+	player.load_from_inventory()
