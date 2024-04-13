@@ -1,0 +1,241 @@
+[gd_scene load_steps=6 format=3 uid="uid://eia61wwgijm2"]
+
+[ext_resource type="FontVariation" uid="uid://cht0lhbb6rug8" path="res://assets/icon.tres" id="1_5fasr"]
+[ext_resource type="Script" path="res://ui/inventory.gd" id="1_xf7jg"]
+[ext_resource type="PackedScene" uid="uid://c5v7bfdsm3pgn" path="res://ui/slot.tscn" id="3_d2j0m"]
+[ext_resource type="Texture2D" uid="uid://mdc6lm1cs4by" path="res://assets/Kopf_Basic.svg" id="3_inckg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n0d7x"]
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
+bg_color = Color(0.6, 0.6, 0.6, 0.768627)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xf7jg")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="MarginContainer"]
+layout_mode = 2
+ratio = 1.8
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/AspectRatioContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_n0d7x")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/AspectRatioContainer/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 100
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Monster" type="Control" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Torso" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/Monster" instance=ExtResource("3_d2j0m")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -53.3
+offset_top = -93.0
+offset_right = 61.7
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ItemPlace" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/Monster/Torso" index="0"]
+texture = ExtResource("3_inckg")
+
+[node name="LegR" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/Monster" instance=ExtResource("3_d2j0m")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 30.7
+offset_top = 70.0
+offset_right = 110.7
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LegL" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/Monster" instance=ExtResource("3_d2j0m")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -111.3
+offset_top = 70.0
+offset_right = -31.3
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FeetL" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/Monster" instance=ExtResource("3_d2j0m")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -110.3
+offset_top = 156.0
+offset_right = -30.3
+offset_bottom = 236.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FeetR" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/Monster" instance=ExtResource("3_d2j0m")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 33.7
+offset_top = 156.0
+offset_right = 113.7
+offset_bottom = 236.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ArmR" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/Monster" instance=ExtResource("3_d2j0m")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 104.7
+offset_top = -145.0
+offset_right = 184.7
+offset_bottom = -65.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HandR" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/Monster" instance=ExtResource("3_d2j0m")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 103.7
+offset_top = -51.0
+offset_right = 183.7
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HandL" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/Monster" instance=ExtResource("3_d2j0m")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -176.3
+offset_top = -61.0
+offset_right = -96.3
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ArmL" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/Monster" instance=ExtResource("3_d2j0m")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -176.3
+offset_top = -158.0
+offset_right = -96.3
+offset_bottom = -78.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Head" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/Monster" instance=ExtResource("3_d2j0m")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.3
+offset_top = -238.0
+offset_right = 51.7
+offset_bottom = -158.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 5
+
+[node name="Slot2" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("3_d2j0m")]
+layout_mode = 2
+
+[node name="Slot3" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("3_d2j0m")]
+layout_mode = 2
+
+[node name="Slot4" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("3_d2j0m")]
+layout_mode = 2
+
+[node name="Slot5" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("3_d2j0m")]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/AspectRatioContainer/PanelContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("1_5fasr")
+theme_override_font_sizes/font_size = 24
+text = "close"
+
+[node name="Items" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[editable path="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/Monster/Torso"]

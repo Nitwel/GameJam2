@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @export var speed: float = 40000
 @onready var action_area := $BushArea
+@onready var main := $"/root/Main"
 
 func _physics_process(delta):
 
@@ -16,4 +17,4 @@ func _physics_process(delta):
     move_and_slide()
 
     if action_area.has_overlapping_bodies():
-        print("Overlapping")
+        main.start_battle()
