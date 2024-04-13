@@ -1,9 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://eia61wwgijm2"]
+[gd_scene load_steps=12 format=3 uid="uid://eia61wwgijm2"]
 
 [ext_resource type="FontVariation" uid="uid://cht0lhbb6rug8" path="res://assets/icon.tres" id="1_5fasr"]
 [ext_resource type="Script" path="res://ui/inventory.gd" id="1_xf7jg"]
 [ext_resource type="PackedScene" uid="uid://c5v7bfdsm3pgn" path="res://ui/slot.tscn" id="3_d2j0m"]
+[ext_resource type="Texture2D" uid="uid://b8qgc7ke4kxty" path="res://assets/Body_Spike.svg" id="3_geuhc"]
 [ext_resource type="Texture2D" uid="uid://mdc6lm1cs4by" path="res://assets/Kopf_Basic.svg" id="3_inckg"]
+[ext_resource type="Texture2D" uid="uid://b6gavcyc2pjxd" path="res://assets/Extrimity_Basic.svg" id="4_wtdj3"]
+[ext_resource type="Texture2D" uid="uid://bv1xugj1jlk1u" path="res://assets/Extrimity_Mutant.svg" id="5_7v7o7"]
+[ext_resource type="Texture2D" uid="uid://ck8jqi3xnqe6l" path="res://assets/Foot_Spike.svg" id="7_dh2xw"]
+[ext_resource type="Texture2D" uid="uid://c26jjqyatecuo" path="res://assets/Hand_Mutant.svg" id="8_ubnsn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n0d7x"]
 content_margin_left = 20.0
@@ -15,6 +20,10 @@ corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_7dl1p"]
+font = ExtResource("1_5fasr")
+font_size = 48
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -49,7 +58,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_n0d7x")
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_top = 50
-theme_override_constants/margin_right = 100
+theme_override_constants/margin_right = 50
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer"]
 layout_mode = 2
@@ -74,7 +83,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ItemPlace" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/Monster/Torso" index="0"]
-texture = ExtResource("3_inckg")
+texture = ExtResource("3_geuhc")
 
 [node name="LegR" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/Monster" instance=ExtResource("3_d2j0m")]
 layout_mode = 1
@@ -90,6 +99,9 @@ offset_bottom = 150.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="ItemPlace" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/Monster/LegR" index="0"]
+texture = ExtResource("4_wtdj3")
+
 [node name="LegL" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/Monster" instance=ExtResource("3_d2j0m")]
 layout_mode = 1
 anchors_preset = 8
@@ -103,6 +115,9 @@ offset_right = -31.3
 offset_bottom = 150.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="ItemPlace" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/Monster/LegL" index="0"]
+texture = ExtResource("5_7v7o7")
 
 [node name="FeetL" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/Monster" instance=ExtResource("3_d2j0m")]
 layout_mode = 1
@@ -215,14 +230,94 @@ columns = 5
 [node name="Slot2" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("3_d2j0m")]
 layout_mode = 2
 
+[node name="ItemPlace" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/GridContainer/Slot2" index="0"]
+texture = ExtResource("3_inckg")
+
 [node name="Slot3" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("3_d2j0m")]
 layout_mode = 2
+
+[node name="ItemPlace" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/GridContainer/Slot3" index="0"]
+texture = ExtResource("7_dh2xw")
 
 [node name="Slot4" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("3_d2j0m")]
 layout_mode = 2
 
+[node name="ItemPlace" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/GridContainer/Slot4" index="0"]
+texture = ExtResource("8_ubnsn")
+
 [node name="Slot5" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("3_d2j0m")]
 layout_mode = 2
+
+[node name="Slot6" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("3_d2j0m")]
+layout_mode = 2
+
+[node name="Slot7" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("3_d2j0m")]
+layout_mode = 2
+
+[node name="Slot8" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("3_d2j0m")]
+layout_mode = 2
+
+[node name="Slot9" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("3_d2j0m")]
+layout_mode = 2
+
+[node name="Slot10" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("3_d2j0m")]
+layout_mode = 2
+
+[node name="Slot11" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("3_d2j0m")]
+layout_mode = 2
+
+[node name="Slot12" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("3_d2j0m")]
+layout_mode = 2
+
+[node name="Slot13" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("3_d2j0m")]
+layout_mode = 2
+
+[node name="Slot14" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("3_d2j0m")]
+layout_mode = 2
+
+[node name="Slot15" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("3_d2j0m")]
+layout_mode = 2
+
+[node name="Slot16" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("3_d2j0m")]
+layout_mode = 2
+
+[node name="Slot17" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("3_d2j0m")]
+layout_mode = 2
+
+[node name="Slot18" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("3_d2j0m")]
+layout_mode = 2
+
+[node name="Slot19" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("3_d2j0m")]
+layout_mode = 2
+
+[node name="Slot20" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("3_d2j0m")]
+layout_mode = 2
+
+[node name="Slot21" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("3_d2j0m")]
+layout_mode = 2
+
+[node name="Slot21" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer" instance=ExtResource("3_d2j0m")]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+delete = true
+
+[node name="Label" type="Label" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/Slot21"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "delete"
+label_settings = SubResource("LabelSettings_7dl1p")
 
 [node name="Button" type="Button" parent="MarginContainer/AspectRatioContainer/PanelContainer"]
 custom_minimum_size = Vector2(40, 40)
@@ -239,3 +334,8 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [editable path="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/Monster/Torso"]
+[editable path="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/Monster/LegR"]
+[editable path="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/Monster/LegL"]
+[editable path="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/GridContainer/Slot2"]
+[editable path="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/GridContainer/Slot3"]
+[editable path="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/GridContainer/Slot4"]

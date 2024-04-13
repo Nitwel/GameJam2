@@ -2,6 +2,7 @@ extends Panel
 class_name UISlot
 
 @onready var item_place = $ItemPlace
+@export var delete = false
 
 func _get_drag_data(at_position):
 	var preview_texture = TextureRect.new()
@@ -21,6 +22,10 @@ func _can_drop_data(at_position, data):
 	return data is UISlot
 
 func _drop_data(at_position, data):
+	if delete:
+		data.item_place.texture = null
+		return
+
 	var temp = data.item_place.texture
 	data.item_place.texture = item_place.texture
 	item_place.texture = temp
