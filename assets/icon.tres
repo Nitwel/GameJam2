@@ -1,0 +1,6 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://cht0lhbb6rug8"]
+
+[ext_resource type="FontFile" uid="uid://dc2d0jkvwjf3t" path="res://assets/base_icons.woff2" id="1_kx536"]
+
+[resource]
+base_font = ExtResource("1_kx536")
