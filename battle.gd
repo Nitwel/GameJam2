@@ -4,11 +4,16 @@ extends Node2D
 @onready var player = $Player
 @onready var enemy = $Enemy
 @onready var animation = $CanvasLayer/AnimationPlayer
+@onready var area_lava = $ArenaLava
+@onready var area_forest = $ArenaForest
 
 signal on_battle_over(looser: Body)
 
 func start(level: float, enemy_body=null):
 	var body = main.inventory.get_body()
+
+	area_lava.visible = enemy_body != null
+	area_forest.visible = enemy_body == null
 
 	player.load(body)
 	enemy.load(enemy_body if enemy_body else Body.get_random_body(level))
