@@ -80,7 +80,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_down",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -97,7 +97,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_left",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -114,7 +114,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_right",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -131,7 +131,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_up",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u1ksw"]
@@ -140,20 +140,22 @@ radius = 76.0592
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 3
 script = ExtResource("1_7qoxl")
+speed = 60000.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 75)
 shape = SubResource("CapsuleShape2D_slkju")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, 60)
-scale = Vector2(2.5, 2.5)
+position = Vector2(0, -33)
+scale = Vector2(5.95833, 5.95833)
 sprite_frames = SubResource("SpriteFrames_apaha")
-animation = &"walk_up"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.943732
+frame_progress = 0.202706
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
 
 [node name="BushArea" type="Area2D" parent="."]
 collision_mask = 4

@@ -226,6 +226,7 @@ custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 
 [node name="GridContainer" type="GridContainer" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/Stats"]
+layout_mode = 0
 columns = 2
 
 [node name="LabelDamage" type="Label" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/Stats/GridContainer"]

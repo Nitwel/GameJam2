@@ -9,12 +9,12 @@
 script = ExtResource("1_8n75d")
 
 [node name="ArenaLava" type="Sprite2D" parent="."]
-scale = Vector2(1.54933, 1.532)
+scale = Vector2(2.58133, 2.438)
 texture = ExtResource("2_o0im6")
 
 [node name="ArenaForest" type="Sprite2D" parent="."]
 visible = false
-scale = Vector2(1.54933, 1.532)
+scale = Vector2(2.576, 2.324)
 texture = ExtResource("3_bttbk")
 
 [node name="Camera2D" type="Camera2D" parent="."]

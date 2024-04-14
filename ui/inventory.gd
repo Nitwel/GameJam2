@@ -94,15 +94,27 @@ func update_tooltip():
 	if hovering == null&&dragging == null:
 		tooltip.item = null
 		tooltip_compare.item = null
+
+		tooltip.compare = null
+		tooltip_compare.compare = null
 	elif hovering != null&&dragging == null:
 		tooltip.item = hovering
 		tooltip_compare.item = null
+		
+		tooltip.compare = null
+		tooltip_compare.compare = null
 	elif hovering == null&&dragging != null:
 		tooltip.item = dragging
 		tooltip_compare.item = null
+
+		tooltip.compare = null
+		tooltip_compare.compare = null
 	elif hovering != dragging:
 		tooltip.item = dragging
 		tooltip_compare.item = hovering
+
+		tooltip.compare = hovering
+		tooltip_compare.compare = dragging
 
 func _process(delta):
 	if Input.is_action_just_released("click")&&dragging != null:

@@ -52,11 +52,12 @@ func _can_drop_data(at_position, data):
 	return slot_type == Item.Part.NONE or (data.item != null and data.item.part == slot_type)
 
 func _drop_data(at_position, data):
-	main.inventory.dragging = null
 	if delete:
 		data.item = null
+		main.inventory.dragging = null
 		return
 
 	var temp = data.item
 	data.item = item
 	item = temp
+	main.inventory.dragging = null
