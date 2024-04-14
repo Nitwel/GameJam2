@@ -20,6 +20,7 @@ enum Part {
 
 @export var texture: CompressedTexture2D
 
+@export var name: String = "Item"
 @export var part: Part = Part.NONE
 @export var damage: float = 0
 @export var armor: float = 0
@@ -51,6 +52,7 @@ static func get_random_item(type: Part, level: float) -> Item:
             item.texture = extrimity_textures[part_level]
 
     item.part = type
+    item.name = item.texture.resource_name
 
     var stats = {
         "damage": randf_range([2, 8, 32][part_level], [8, 32, 128][part_level]) * level,

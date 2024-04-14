@@ -1,17 +1,17 @@
 extends Resource
 class_name Body
 
-var head: Item
-var torso: Item
-var left_arm: Item
-var right_arm: Item
-var left_leg: Item
-var right_leg: Item
-var left_foot: Item
-var right_foot: Item
-var left_hand: Item
-var right_hand: Item
-var level: float
+@export var head: Item
+@export var torso: Item
+@export var left_arm: Item
+@export var right_arm: Item
+@export var left_leg: Item
+@export var right_leg: Item
+@export var left_foot: Item
+@export var right_foot: Item
+@export var left_hand: Item
+@export var right_hand: Item
+@export var level: float
 
 func get_part(part: String):
     var part_map = get_map()

@@ -13,13 +13,13 @@ func _process(delta):
 	if Input.is_action_just_pressed("inventory")&&!menu.visible:
 		toggle_inventory()
 
-func start_battle(level: float):
+func start_battle(level: float, body=null):
 	remove_child(player)
 	remove_child(map)
 	add_child(battle)
 	inventory.disabled = true
 	toggle_inventory(false)
-	battle.start(level)
+	battle.start(level, body)
 
 func battle_over():
 	remove_child(battle)

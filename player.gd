@@ -33,8 +33,11 @@ func _physics_process(delta):
 
 	if moved:
 		var rand_num = randf()
+		var trigger_bush = rand_num < 0.006
 
-		if rand_num < 0.006:
-			for body in action_area.get_overlapping_bodies():
-				if body is Bush:
-					main.start_battle(body.level)
+		for body in action_area.get_overlapping_bodies():
+			print(body, body is Boss)
+			if body is Bush and trigger_bush:
+				main.start_battle(body.level)
+			if body is Boss:
+				main.start_battle(body.body.level, body.body)

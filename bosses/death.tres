@@ -1,0 +1,133 @@
+[gd_resource type="Resource" script_class="Body" load_steps=18 format=3 uid="uid://de550shayfief"]
+
+[ext_resource type="Script" path="res://item.gd" id="1_x6fjx"]
+[ext_resource type="Texture2D" uid="uid://cbjvqmxh4gc0v" path="res://assets/Head_Spike.svg" id="2_x58ud"]
+[ext_resource type="Script" path="res://body.gd" id="3_mwqq2"]
+[ext_resource type="Texture2D" uid="uid://b4x3nltwnitgp" path="res://assets/Extrimity_Spike.svg" id="3_o0ibs"]
+[ext_resource type="Texture2D" uid="uid://b8qgc7ke4kxty" path="res://assets/Body_Spike.svg" id="4_ku788"]
+[ext_resource type="Texture2D" uid="uid://ck8jqi3xnqe6l" path="res://assets/Foot_Spike.svg" id="4_muvr5"]
+[ext_resource type="Texture2D" uid="uid://ctux7x2tbrqso" path="res://assets/Hand_Spike.svg" id="5_teryl"]
+
+[sub_resource type="Resource" id="Resource_hc0o5"]
+script = ExtResource("1_x6fjx")
+texture = ExtResource("2_x58ud")
+name = "DeathHead"
+part = 1
+damage = 1000.0
+armor = 0.0
+health = 0.0
+attack_speed = 0.0
+health_regen = 0.0
+
+[sub_resource type="Resource" id="Resource_4ram8"]
+script = ExtResource("1_x6fjx")
+texture = ExtResource("3_o0ibs")
+name = "DeathExtrimity"
+part = 5
+damage = 1000.0
+armor = 0.0
+health = 0.0
+attack_speed = 0.0
+health_regen = 0.0
+
+[sub_resource type="Resource" id="Resource_prthf"]
+script = ExtResource("1_x6fjx")
+texture = ExtResource("4_muvr5")
+name = "DeathFoot"
+part = 3
+damage = 1000.0
+armor = 0.0
+health = 0.0
+attack_speed = 0.0
+health_regen = 0.0
+
+[sub_resource type="Resource" id="Resource_ph74a"]
+script = ExtResource("1_x6fjx")
+texture = ExtResource("5_teryl")
+name = "DeathHand"
+part = 4
+damage = 1000.0
+armor = 0.0
+health = 0.0
+attack_speed = 0.0
+health_regen = 0.0
+
+[sub_resource type="Resource" id="Resource_octib"]
+script = ExtResource("1_x6fjx")
+texture = ExtResource("3_o0ibs")
+name = "DeathExtrimity"
+part = 5
+damage = 1000.0
+armor = 0.0
+health = 0.0
+attack_speed = 0.0
+health_regen = 0.0
+
+[sub_resource type="Resource" id="Resource_du5s8"]
+script = ExtResource("1_x6fjx")
+texture = ExtResource("3_o0ibs")
+name = "DeathExtrimity"
+part = 5
+damage = 1000.0
+armor = 0.0
+health = 0.0
+attack_speed = 0.0
+health_regen = 0.0
+
+[sub_resource type="Resource" id="Resource_g1h6v"]
+script = ExtResource("1_x6fjx")
+texture = ExtResource("4_muvr5")
+name = "DeathFoot"
+part = 3
+damage = 1000.0
+armor = 0.0
+health = 0.0
+attack_speed = 0.0
+health_regen = 0.0
+
+[sub_resource type="Resource" id="Resource_nofe0"]
+script = ExtResource("1_x6fjx")
+texture = ExtResource("5_teryl")
+name = "DeathHand"
+part = 4
+damage = 1000.0
+armor = 0.0
+health = 0.0
+attack_speed = 0.0
+health_regen = 0.0
+
+[sub_resource type="Resource" id="Resource_c4jsv"]
+script = ExtResource("1_x6fjx")
+texture = ExtResource("3_o0ibs")
+name = "DeathExtrimity"
+part = 5
+damage = 1000.0
+armor = 0.0
+health = 0.0
+attack_speed = 0.0
+health_regen = 0.0
+
+[sub_resource type="Resource" id="Resource_gcqev"]
+script = ExtResource("1_x6fjx")
+texture = ExtResource("4_ku788")
+name = "DeathTorso"
+part = 2
+damage = 1000.0
+armor = 0.0
+health = 0.0
+attack_speed = 0.0
+health_regen = 0.0
+
+[resource]
+script = ExtResource("3_mwqq2")
+head = SubResource("Resource_hc0o5")
+torso = SubResource("Resource_gcqev")
+left_arm = SubResource("Resource_4ram8")
+right_arm = SubResource("Resource_du5s8")
+left_leg = SubResource("Resource_octib")
+right_leg = SubResource("Resource_c4jsv")
+left_foot = SubResource("Resource_prthf")
+right_foot = SubResource("Resource_g1h6v")
+left_hand = SubResource("Resource_ph74a")
+right_hand = SubResource("Resource_nofe0")
+level = 0.0

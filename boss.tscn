@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://vn1pdmtxp0bl"]
+
+[ext_resource type="Script" path="res://boss.gd" id="1_kxw4k"]
+[ext_resource type="PackedScene" uid="uid://c7cinvg4thke4" path="res://character.tscn" id="1_xco05"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ierif"]
+radius = 356.001
+
+[node name="Boss" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 7
+script = ExtResource("1_kxw4k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ierif")
+
+[node name="Character" parent="." instance=ExtResource("1_xco05")]

@@ -1,5 +1,6 @@
 extends PanelContainer
 
+@onready var title = $VBoxContainer/Title
 @onready var damage_label = $VBoxContainer/GridContainer/Damage2
 @onready var armor_label = $VBoxContainer/GridContainer/Armor2
 @onready var health_label = $VBoxContainer/GridContainer/Health2
@@ -16,6 +17,7 @@ var item = null:
 		if item == null:
 			visible = false
 		else:
+			title.text = item.name
 			visible = true
 			damage_label.text = str(round(item.damage))
 			armor_label.text = str(round(item.armor))

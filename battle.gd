@@ -5,11 +5,11 @@ extends Node2D
 @onready var enemy = $Enemy
 @onready var animation = $CanvasLayer/AnimationPlayer
 
-func start(level: float):
+func start(level: float, enemy_body=null):
 	var body = main.inventory.get_body()
 
 	player.load(body)
-	enemy.load(Body.get_random_body(level))
+	enemy.load(enemy_body if enemy_body else Body.get_random_body(level))
 	animation.play("start")
 	await animation.animation_finished
 	player.start()
