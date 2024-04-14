@@ -13,9 +13,9 @@ script = ExtResource("1_x6fjx")
 texture = ExtResource("2_x58ud")
 name = "DeathHead"
 part = 1
-damage = 10000.0
+damage = 100.0
 armor = 0.0
-health = 100000.0
+health = 0.0
 attack_speed = 2.0
 health_regen = 0.0
 
@@ -120,6 +120,8 @@ health_regen = 0.0
 
 [resource]
 script = ExtResource("3_mwqq2")
+name = "Death"
+level = 10.0
 head = SubResource("Resource_hc0o5")
 torso = SubResource("Resource_gcqev")
 left_arm = SubResource("Resource_4ram8")
@@ -130,4 +132,3 @@ left_foot = SubResource("Resource_prthf")
 right_foot = SubResource("Resource_g1h6v")
 left_hand = SubResource("Resource_ph74a")
 right_hand = SubResource("Resource_nofe0")
-level = 0.0
