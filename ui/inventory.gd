@@ -44,10 +44,7 @@ var dragging = null:
 
 		update_tooltip()
 
-var disabled = false:
-	set(value):
-		disabled = value
-		visible = !value
+var disabled = false
 
 func _ready():
 	tooltip.visible = false

@@ -18,6 +18,7 @@ func start_battle(level: float):
 	remove_child(map)
 	add_child(battle)
 	inventory.disabled = true
+	toggle_inventory(false)
 	battle.start(level)
 
 func battle_over():
@@ -25,12 +26,13 @@ func battle_over():
 	add_child(player)
 	add_child(map)
 	inventory.disabled = false
+	toggle_inventory(true)
 
-func toggle_menu():
-	menu.visible = !menu.visible
+func toggle_menu(value=!menu.visible):
+	menu.visible = value
 	menu.start_button.text = "Resume"
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE if menu.visible or inventory.visible else Input.MOUSE_MODE_CAPTURED)
 
-func toggle_inventory():
-	inventory.visible = !inventory.visible
+func toggle_inventory(value=!inventory.visible):
+	inventory.visible = value
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE if inventory.visible else Input.MOUSE_MODE_CAPTURED)
