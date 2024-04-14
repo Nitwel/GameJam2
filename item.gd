@@ -32,7 +32,7 @@ static func get_random_item(type: Part, level: float) -> Item:
     var item = Item.new()
 
     var part_level = 0
-    var stat_count = pick([randf_range(1, 2), randf_range(2, 3), randf_range(3, 4), randf_range(4, 5)], level)
+    var stat_count = pick([2, 3, 4, 5], level)
 
     match type:
         Part.HEAD:
