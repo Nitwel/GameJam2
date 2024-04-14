@@ -1,21 +1,21 @@
 [gd_scene load_steps=25 format=3 uid="uid://c7cinvg4thke4"]
 
-[ext_resource type="Texture2D" uid="uid://b6gavcyc2pjxd" path="res://assets/Extrimity_Basic.svg" id="1_00lww"]
+[ext_resource type="Texture2D" uid="uid://dwhtng0wjejo0" path="res://assets/Extrimity_Basic.svg" id="1_00lww"]
 [ext_resource type="Script" path="res://character.gd" id="1_fdlnb"]
-[ext_resource type="Texture2D" uid="uid://b4x3nltwnitgp" path="res://assets/Extrimity_Spike.svg" id="1_ujqca"]
-[ext_resource type="Texture2D" uid="uid://ds32cve4l302s" path="res://assets/Hand_Basic.svg" id="2_8io3m"]
-[ext_resource type="Texture2D" uid="uid://bv1xugj1jlk1u" path="res://assets/Extrimity_Mutant.svg" id="2_ijg0f"]
-[ext_resource type="Texture2D" uid="uid://dvgqqi72imcil" path="res://assets/Body_Basic.svg" id="3_g7wi1"]
-[ext_resource type="Texture2D" uid="uid://ctux7x2tbrqso" path="res://assets/Hand_Spike.svg" id="4_i4cyp"]
-[ext_resource type="Texture2D" uid="uid://bsvpxgm6q3oep" path="res://assets/Foot_Basic.svg" id="5_safjj"]
-[ext_resource type="Texture2D" uid="uid://b8qgc7ke4kxty" path="res://assets/Body_Spike.svg" id="5_wkb65"]
-[ext_resource type="Texture2D" uid="uid://c26jjqyatecuo" path="res://assets/Hand_Mutant.svg" id="6_4j6hy"]
-[ext_resource type="Texture2D" uid="uid://ck8jqi3xnqe6l" path="res://assets/Foot_Spike.svg" id="6_5d2vi"]
-[ext_resource type="Texture2D" uid="uid://br42ftxmojpmf" path="res://assets/Foot_Mutant.svg" id="9_skbm7"]
-[ext_resource type="Texture2D" uid="uid://cbjvqmxh4gc0v" path="res://assets/Head_Spike.svg" id="10_dwnlk"]
-[ext_resource type="Texture2D" uid="uid://boi8b088fe22i" path="res://assets/Body_Mutant.svg" id="12_jq4xi"]
-[ext_resource type="Texture2D" uid="uid://cx6iup5ua7tmq" path="res://assets/Head_Basic.svg" id="14_7j23i"]
-[ext_resource type="Texture2D" uid="uid://c5cixqooe1eyr" path="res://assets/Head_Mutant.svg" id="16_tedch"]
+[ext_resource type="Texture2D" uid="uid://cg5yjc71nl6p2" path="res://assets/Extrimity_Spike.svg" id="1_ujqca"]
+[ext_resource type="Texture2D" uid="uid://bw18hoil5ds13" path="res://assets/Hand_Basic.svg" id="2_8io3m"]
+[ext_resource type="Texture2D" uid="uid://dx7skgu2tf6q4" path="res://assets/Extrimity_Mutant.svg" id="2_ijg0f"]
+[ext_resource type="Texture2D" uid="uid://dns01s3f5naud" path="res://assets/Body_Basic.svg" id="3_g7wi1"]
+[ext_resource type="Texture2D" uid="uid://b1p14ytd1qnsd" path="res://assets/Hand_Spike.svg" id="4_i4cyp"]
+[ext_resource type="Texture2D" uid="uid://c6iicl2b12yy6" path="res://assets/Foot_Basic.svg" id="5_safjj"]
+[ext_resource type="Texture2D" uid="uid://c5kkpbfx2e1d0" path="res://assets/Body_Spike.svg" id="5_wkb65"]
+[ext_resource type="Texture2D" uid="uid://1mtxju25ew3l" path="res://assets/Hand_Mutant.svg" id="6_4j6hy"]
+[ext_resource type="Texture2D" uid="uid://pqcjggx8fg3r" path="res://assets/Foot_Spike.svg" id="6_5d2vi"]
+[ext_resource type="Texture2D" uid="uid://cbtq2xhyyn6jp" path="res://assets/Foot_Mutant.svg" id="9_skbm7"]
+[ext_resource type="Texture2D" uid="uid://d10eqxl7mie37" path="res://assets/Head_Spike.svg" id="10_dwnlk"]
+[ext_resource type="Texture2D" uid="uid://b1v4ljbutd2xd" path="res://assets/Body_Mutant.svg" id="12_jq4xi"]
+[ext_resource type="Texture2D" uid="uid://c2r5emulftc01" path="res://assets/Head_Basic.svg" id="14_7j23i"]
+[ext_resource type="Texture2D" uid="uid://cs2codp3a82et" path="res://assets/Head_Mutant.svg" id="16_tedch"]
 
 [sub_resource type="Animation" id="Animation_86xwy"]
 length = 0.001
@@ -534,6 +534,20 @@ tracks/10/keys = {
 "update": 0,
 "values": [0.0, 0.282743, 0.303687, 0.0]
 }
+tracks/11/type = "method"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath(".")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"attack"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_b28xw"]
 resource_name = "punsh"
@@ -560,6 +574,20 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [0.0, -1.69471, -0.565487, 0.0]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"attack"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gs87w"]
@@ -982,12 +1010,13 @@ rest = Transform2D(1, 0, 0, 1, 86, -78)
 
 [node name="ForearmL" type="Bone2D" parent="Skeleton2D/Hip/Chest/ArmL"]
 position = Vector2(50, 72)
+scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, 50, 72)
 
 [node name="HandL" type="Bone2D" parent="Skeleton2D/Hip/Chest/ArmL/ForearmL"]
 position = Vector2(9, 98)
 rotation = 0.0840159
-scale = Vector2(2.29641, 0.999994)
+scale = Vector2(2.29641, 0.999993)
 rest = Transform2D(2.28831, 0.192708, -0.0839168, 0.996473, 9, 98)
 
 [node name="LegR" type="Bone2D" parent="Skeleton2D/Hip"]
@@ -1010,6 +1039,7 @@ rest = Transform2D(1, 0, 0, 1, 55, 14)
 
 [node name="LowerLegL" type="Bone2D" parent="Skeleton2D/Hip/LegL"]
 position = Vector2(39, 87)
+scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, 39, 87)
 
 [node name="FootL" type="Bone2D" parent="Skeleton2D/Hip/LegL/LowerLegL"]

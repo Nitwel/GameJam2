@@ -62,7 +62,7 @@ func _ready():
 		if !active:
 			return
 
-		enemy.take_damage(damage)
+		
 		var target_animation="kick" if randf() > 0.5 else "punsh"
 		var duration=animation.get_animation(target_animation).length
 		animation.speed_scale=attack_speed / duration
@@ -70,7 +70,10 @@ func _ready():
 
 	)
 
-func start(body: Body):
+func attack():
+	enemy.take_damage(damage)
+
+func load(body: Body):
 	self.body = body
 	load_from_inventory()
 
@@ -81,12 +84,18 @@ func start(body: Body):
 	health_regen = body.get_stat("health_regen")
 	health = max_health
 
-	active = true
-
 	level_label.text = str(floor(body.level))
 
 	timer.wait_time = 1.0 / attack_speed
+	
+
+func start():
+	active = true
 	timer.start()
+
+func stop():
+	active = false
+
 
 func load_from_inventory():
 	for body_part in body_parts.get_children():
@@ -98,5 +107,4 @@ func load_from_inventory():
 func take_damage(amount):
 	health -= amount * (100 / (100 + armor))
 	if health <= 0:
-		active = false
 		main.battle.battle_over(self)
