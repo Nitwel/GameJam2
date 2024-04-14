@@ -65,7 +65,7 @@ func _ready():
 		
 		var target_animation="kick" if randf() > 0.5 else "punsh"
 		var duration=animation.get_animation(target_animation).length
-		animation.speed_scale=attack_speed / duration
+		animation.speed_scale= (attack_speed * duration) + 0.2
 		animation.play(target_animation)
 
 	)

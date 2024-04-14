@@ -1,24 +1,24 @@
 [gd_scene load_steps=30 format=3 uid="uid://c7cinvg4thke4"]
 
-[ext_resource type="Texture2D" uid="uid://b6gavcyc2pjxd" path="res://assets/Extrimity_Basic.svg" id="1_00lww"]
+[ext_resource type="Texture2D" uid="uid://dwhtng0wjejo0" path="res://assets/Extrimity_Basic.svg" id="1_00lww"]
 [ext_resource type="Script" path="res://character.gd" id="1_fdlnb"]
-[ext_resource type="Texture2D" uid="uid://b4x3nltwnitgp" path="res://assets/Extrimity_Spike.svg" id="1_ujqca"]
-[ext_resource type="Texture2D" uid="uid://ds32cve4l302s" path="res://assets/Hand_Basic.svg" id="2_8io3m"]
-[ext_resource type="Texture2D" uid="uid://bv1xugj1jlk1u" path="res://assets/Extrimity_Mutant.svg" id="2_ijg0f"]
-[ext_resource type="Texture2D" uid="uid://dvgqqi72imcil" path="res://assets/Body_Basic.svg" id="3_g7wi1"]
-[ext_resource type="Texture2D" uid="uid://ctux7x2tbrqso" path="res://assets/Hand_Spike.svg" id="4_i4cyp"]
-[ext_resource type="Texture2D" uid="uid://bsvpxgm6q3oep" path="res://assets/Foot_Basic.svg" id="5_safjj"]
-[ext_resource type="Texture2D" uid="uid://b8qgc7ke4kxty" path="res://assets/Body_Spike.svg" id="5_wkb65"]
-[ext_resource type="Texture2D" uid="uid://c26jjqyatecuo" path="res://assets/Hand_Mutant.svg" id="6_4j6hy"]
-[ext_resource type="Texture2D" uid="uid://ck8jqi3xnqe6l" path="res://assets/Foot_Spike.svg" id="6_5d2vi"]
-[ext_resource type="Texture2D" uid="uid://br42ftxmojpmf" path="res://assets/Foot_Mutant.svg" id="9_skbm7"]
-[ext_resource type="Texture2D" uid="uid://cbjvqmxh4gc0v" path="res://assets/Head_Spike.svg" id="10_dwnlk"]
-[ext_resource type="Texture2D" uid="uid://boi8b088fe22i" path="res://assets/Body_Mutant.svg" id="12_jq4xi"]
-[ext_resource type="Texture2D" uid="uid://cx6iup5ua7tmq" path="res://assets/Head_Basic.svg" id="14_7j23i"]
-[ext_resource type="Texture2D" uid="uid://c5cixqooe1eyr" path="res://assets/Head_Mutant.svg" id="16_tedch"]
-[ext_resource type="AudioStream" uid="uid://jdpqa8xesrtp" path="res://assets/sound/IMPACT_LOW_THUD_10.mp3" id="17_c1r3u"]
-[ext_resource type="AudioStream" uid="uid://lw0c0qyv5p0r" path="res://assets/sound/PUNCH_DESIGNED_LIGHT_78.mp3" id="18_icblw"]
-[ext_resource type="AudioStream" uid="uid://do7mycbourxac" path="res://assets/sound/PUNCH_PERCUSSIVE_HEAVY_06.mp3" id="19_rtd2i"]
+[ext_resource type="Texture2D" uid="uid://cg5yjc71nl6p2" path="res://assets/Extrimity_Spike.svg" id="1_ujqca"]
+[ext_resource type="Texture2D" uid="uid://bw18hoil5ds13" path="res://assets/Hand_Basic.svg" id="2_8io3m"]
+[ext_resource type="Texture2D" uid="uid://dx7skgu2tf6q4" path="res://assets/Extrimity_Mutant.svg" id="2_ijg0f"]
+[ext_resource type="Texture2D" uid="uid://dns01s3f5naud" path="res://assets/Body_Basic.svg" id="3_g7wi1"]
+[ext_resource type="Texture2D" uid="uid://b1p14ytd1qnsd" path="res://assets/Hand_Spike.svg" id="4_i4cyp"]
+[ext_resource type="Texture2D" uid="uid://c6iicl2b12yy6" path="res://assets/Foot_Basic.svg" id="5_safjj"]
+[ext_resource type="Texture2D" uid="uid://c5kkpbfx2e1d0" path="res://assets/Body_Spike.svg" id="5_wkb65"]
+[ext_resource type="Texture2D" uid="uid://1mtxju25ew3l" path="res://assets/Hand_Mutant.svg" id="6_4j6hy"]
+[ext_resource type="Texture2D" uid="uid://pqcjggx8fg3r" path="res://assets/Foot_Spike.svg" id="6_5d2vi"]
+[ext_resource type="Texture2D" uid="uid://cbtq2xhyyn6jp" path="res://assets/Foot_Mutant.svg" id="9_skbm7"]
+[ext_resource type="Texture2D" uid="uid://d10eqxl7mie37" path="res://assets/Head_Spike.svg" id="10_dwnlk"]
+[ext_resource type="Texture2D" uid="uid://b1v4ljbutd2xd" path="res://assets/Body_Mutant.svg" id="12_jq4xi"]
+[ext_resource type="Texture2D" uid="uid://c2r5emulftc01" path="res://assets/Head_Basic.svg" id="14_7j23i"]
+[ext_resource type="Texture2D" uid="uid://cs2codp3a82et" path="res://assets/Head_Mutant.svg" id="16_tedch"]
+[ext_resource type="AudioStream" uid="uid://ctysxk6kv0jd0" path="res://assets/sound/IMPACT_LOW_THUD_10.mp3" id="17_c1r3u"]
+[ext_resource type="AudioStream" uid="uid://d4ixf36dqo5ml" path="res://assets/sound/PUNCH_DESIGNED_LIGHT_78.mp3" id="18_icblw"]
+[ext_resource type="AudioStream" uid="uid://o1uchgusq02g" path="res://assets/sound/PUNCH_PERCUSSIVE_HEAVY_06.mp3" id="19_rtd2i"]
 
 [sub_resource type="Animation" id="Animation_86xwy"]
 length = 0.001
@@ -637,7 +637,7 @@ tracks/3/keys = {
 "start_offset": 0.0,
 "stream": SubResource("AudioStreamRandomizer_hgrq3")
 }],
-"times": PackedFloat32Array(0.6)
+"times": PackedFloat32Array(0.5)
 }
 tracks/3/use_blend = true
 
