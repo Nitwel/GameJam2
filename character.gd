@@ -9,6 +9,7 @@ class_name BattleCharacter
 @onready var bar = $ProgressBar
 @onready var animation = $AnimationPlayer
 @onready var level_label = $ProgressBar/PanelContainer/Label
+@onready var name_label = $NameLabel
 
 @export var base_health: float = 100
 @export var base_armor: float = 10
@@ -61,11 +62,10 @@ func _ready():
 	timer.timeout.connect(func():
 		if !active:
 			return
-
 		
 		var target_animation="kick" if randf() > 0.5 else "punsh"
 		var duration=animation.get_animation(target_animation).length
-		animation.speed_scale= (attack_speed * duration) + 0.2
+		animation.speed_scale=(attack_speed * duration) + 0.2
 		animation.play(target_animation)
 
 	)
@@ -75,6 +75,7 @@ func attack():
 
 func load(body: Body):
 	self.body = body
+	name_label.text = body.name
 	load_from_inventory()
 
 	max_health = base_health + body.get_stat("health")
@@ -87,7 +88,6 @@ func load(body: Body):
 	level_label.text = str(floor(body.level))
 
 	timer.wait_time = 1.0 / attack_speed
-	
 
 func start():
 	active = true
@@ -96,7 +96,6 @@ func start():
 func stop():
 	active = false
 	animation.stop()
-
 
 func load_from_inventory():
 	for body_part in body_parts.get_children():

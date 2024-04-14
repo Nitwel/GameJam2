@@ -52,7 +52,7 @@ static func get_random_item(type: Part, level: float) -> Item:
             item.texture = extrimity_textures[part_level]
 
     item.part = type
-    item.name = item.texture.resource_name
+    item.name = item.texture.resource_path.split("/")[- 1].split(".")[0].capitalize()
 
     var stats = {
         "damage": randf_range([2, 8, 32][part_level], [8, 32, 128][part_level]) * level,
