@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var action_area := $BushArea
 @onready var main := $"/root/Main"
 @onready var sprite = $Sprite2D
-@onready var animation_player = $AnimationPlayer
+@onready var animation_player = $Sprite2D
 
 func _physics_process(delta):
 	var moved = false
