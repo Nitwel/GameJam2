@@ -5,6 +5,8 @@ extends Node2D
 @onready var enemy = $Enemy
 @onready var animation = $CanvasLayer/AnimationPlayer
 
+signal on_battle_over(looser: Body)
+
 func start(level: float, enemy_body=null):
 	var body = main.inventory.get_body()
 
@@ -25,4 +27,7 @@ func battle_over(player_lost: BattleCharacter):
 		animation.play("lost")
 	
 	await animation.animation_finished
+
+	on_battle_over.emit(player_lost.body)
+
 	main.battle_over()

@@ -1,6 +1,8 @@
 extends Resource
 class_name Body
 
+@export var name: String
+@export var level: float
 @export var head: Item
 @export var torso: Item
 @export var left_arm: Item
@@ -11,7 +13,6 @@ class_name Body
 @export var right_foot: Item
 @export var left_hand: Item
 @export var right_hand: Item
-@export var level: float
 
 func get_part(part: String):
     var part_map = get_map()
