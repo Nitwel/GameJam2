@@ -5,6 +5,16 @@ extends CharacterBody2D
 @onready var main := $"/root/Main"
 @onready var sprite = $Sprite2D
 @onready var animation_player = $Sprite2D
+@onready var audioplayer = $AudioStreamPlayer
+var steps = false:
+	set(value):
+		if steps != value:
+			steps = value
+			if steps:
+				audioplayer.play()
+			else:
+				audioplayer.stop()
+
 
 func _physics_process(delta):
 	if main.menu.visible:
@@ -25,9 +35,11 @@ func _physics_process(delta):
 			animation_player.play("walk_down")
 		elif direction.y < 0:
 			animation_player.play("walk_up")
+		steps = true
 	else:
 		velocity = Vector2.ZERO
 		animation_player.play("idle")
+		steps = false
 
 	move_and_slide()
 
