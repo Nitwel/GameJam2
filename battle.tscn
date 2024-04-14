@@ -1,12 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://bgfqdlm4dlr6p"]
+[gd_scene load_steps=5 format=3 uid="uid://bgfqdlm4dlr6p"]
 
 [ext_resource type="Script" path="res://battle.gd" id="1_8n75d"]
 [ext_resource type="PackedScene" uid="uid://c7cinvg4thke4" path="res://character.tscn" id="1_t822e"]
+[ext_resource type="Texture2D" uid="uid://bbsmbj8e7wqf3" path="res://assets/Arena_Lava.svg" id="2_o0im6"]
+[ext_resource type="Texture2D" uid="uid://dv1hr7grd8liq" path="res://assets/Arena_Forest.svg" id="3_bttbk"]
 
 [node name="Battle" type="Node2D"]
 script = ExtResource("1_8n75d")
 
+[node name="ArenaLava" type="Sprite2D" parent="."]
+scale = Vector2(1.54933, 1.532)
+texture = ExtResource("2_o0im6")
+
+[node name="ArenaForest" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(1.54933, 1.532)
+texture = ExtResource("3_bttbk")
+
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
 
 [node name="Player" parent="." node_paths=PackedStringArray("enemy") instance=ExtResource("1_t822e")]
 position = Vector2(-200, 290)
