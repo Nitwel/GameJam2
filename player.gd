@@ -6,15 +6,21 @@ extends CharacterBody2D
 @onready var sprite = $Sprite2D
 @onready var animation_player = $Sprite2D
 @onready var audioplayer = $AudioStreamPlayer
+
+var boss_entered = false
+
 var steps = false:
 	set(value):
 		if steps != value:
 			steps = value
+
+			if !is_inside_tree():
+				return
+
 			if steps:
 				audioplayer.play()
 			else:
 				audioplayer.stop()
-
 
 func _physics_process(delta):
 	if main.menu.visible:
@@ -44,6 +50,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 	if moved:
+		var boss_area = null
 		var rand_num = randf()
 		var trigger_bush = rand_num < 0.006
 
@@ -52,4 +59,12 @@ func _physics_process(delta):
 			if body is Bush and trigger_bush:
 				main.start_battle(body.level)
 			if body is Boss:
-				main.start_battle(body.body.level, body.body)
+				boss_area = body
+
+		print(boss_area, " ", boss_entered)
+
+		if boss_area == null:
+			boss_entered = false
+		elif not boss_entered:
+			main.start_battle(boss_area.body.level, boss_area.body)
+			boss_entered = true

@@ -13,10 +13,10 @@ script = ExtResource("1_x6fjx")
 texture = ExtResource("2_x58ud")
 name = "DeathHead"
 part = 1
-damage = 1000.0
+damage = 10000.0
 armor = 0.0
-health = 0.0
-attack_speed = 0.0
+health = 100000.0
+attack_speed = 2.0
 health_regen = 0.0
 
 [sub_resource type="Resource" id="Resource_4ram8"]
