@@ -61,8 +61,6 @@ func _physics_process(delta):
 			if body is Boss:
 				boss_area = body
 
-		print(boss_area, " ", boss_entered)
-
 		if boss_area == null:
 			boss_entered = false
 		elif not boss_entered:
