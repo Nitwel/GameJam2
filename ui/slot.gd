@@ -15,24 +15,16 @@ class_name UISlot
 		update()
 @export var slot_type: Item.Part = Item.Part.NONE
 
-var hovering = false
-
 func _ready():
 	update()
 
 	mouse_entered.connect(func():
-		hovering=true
+		main.inventory.hovering=item
 	)
 
 	mouse_exited.connect(func():
-		hovering=false
-		main.inventory.tooltip.item=null
+		main.inventory.hovering=null
 	)
-
-func _input(event):
-	if event is InputEventMouseMotion&&hovering&&item:
-		main.inventory.tooltip.position = event.global_position
-		main.inventory.tooltip.item = item
 
 func update():
 	if item:
@@ -52,12 +44,15 @@ func _get_drag_data(at_position):
 
 	set_drag_preview(preview)
 
+	main.inventory.dragging = item
+
 	return self
 
 func _can_drop_data(at_position, data):
-	return slot_type == Item.Part.NONE or data.item.part == slot_type
+	return slot_type == Item.Part.NONE or (data.item != null and data.item.part == slot_type)
 
 func _drop_data(at_position, data):
+	main.inventory.dragging = null
 	if delete:
 		data.item = null
 		return

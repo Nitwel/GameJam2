@@ -7,19 +7,18 @@ extends PanelContainer
 @onready var health_regen_label = $VBoxContainer/GridContainer/HealthRegen2
 
 var item = null:
-    set(value):
-        item = value
+	set(value):
+		item = value
 
-        if !is_inside_tree():
-            return
+		if !is_inside_tree():
+			return
 
-        if item == null:
-            visible = false
-        else:
-            visible = true
-            damage_label.text = str(round(item.damage))
-            armor_label.text = str(round(item.armor))
-            health_label.text = str(round(item.health))
-            attack_speed_label.text = str(round(item.attack_speed * 1000) / 1000)
-            health_regen_label.text = str(round(item.health_regen * 10) / 10)
-        
+		if item == null:
+			visible = false
+		else:
+			visible = true
+			damage_label.text = str(round(item.damage))
+			armor_label.text = str(round(item.armor))
+			health_label.text = str(round(item.health))
+			attack_speed_label.text = str(round(item.attack_speed * 1000) / 1000)
+			health_regen_label.text = str(round(item.health_regen * 10) / 10)

@@ -59,11 +59,16 @@ theme_override_constants/margin_right = 50
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="Monster" type="Control" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Torso" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/Monster" instance=ExtResource("3_d2j0m")]
+[node name="Monster" type="Control" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Torso" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/Monster" instance=ExtResource("3_d2j0m")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -78,7 +83,7 @@ grow_horizontal = 2
 grow_vertical = 2
 slot_type = 2
 
-[node name="LegR" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/Monster" instance=ExtResource("3_d2j0m")]
+[node name="LegR" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/Monster" instance=ExtResource("3_d2j0m")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -93,7 +98,7 @@ grow_horizontal = 2
 grow_vertical = 2
 slot_type = 5
 
-[node name="LegL" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/Monster" instance=ExtResource("3_d2j0m")]
+[node name="LegL" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/Monster" instance=ExtResource("3_d2j0m")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -108,7 +113,7 @@ grow_horizontal = 2
 grow_vertical = 2
 slot_type = 5
 
-[node name="FeetL" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/Monster" instance=ExtResource("3_d2j0m")]
+[node name="FeetL" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/Monster" instance=ExtResource("3_d2j0m")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -123,7 +128,7 @@ grow_horizontal = 2
 grow_vertical = 2
 slot_type = 3
 
-[node name="FeetR" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/Monster" instance=ExtResource("3_d2j0m")]
+[node name="FeetR" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/Monster" instance=ExtResource("3_d2j0m")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -138,7 +143,7 @@ grow_horizontal = 2
 grow_vertical = 2
 slot_type = 3
 
-[node name="ArmR" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/Monster" instance=ExtResource("3_d2j0m")]
+[node name="ArmR" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/Monster" instance=ExtResource("3_d2j0m")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -153,7 +158,7 @@ grow_horizontal = 2
 grow_vertical = 2
 slot_type = 5
 
-[node name="HandR" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/Monster" instance=ExtResource("3_d2j0m")]
+[node name="HandR" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/Monster" instance=ExtResource("3_d2j0m")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -168,7 +173,7 @@ grow_horizontal = 2
 grow_vertical = 2
 slot_type = 4
 
-[node name="HandL" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/Monster" instance=ExtResource("3_d2j0m")]
+[node name="HandL" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/Monster" instance=ExtResource("3_d2j0m")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -183,7 +188,7 @@ grow_horizontal = 2
 grow_vertical = 2
 slot_type = 4
 
-[node name="ArmL" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/Monster" instance=ExtResource("3_d2j0m")]
+[node name="ArmL" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/Monster" instance=ExtResource("3_d2j0m")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -198,7 +203,7 @@ grow_horizontal = 2
 grow_vertical = 2
 slot_type = 5
 
-[node name="Head" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/Monster" instance=ExtResource("3_d2j0m")]
+[node name="Head" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/Monster" instance=ExtResource("3_d2j0m")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -213,7 +218,88 @@ grow_horizontal = 2
 grow_vertical = 2
 slot_type = 1
 
-[node name="VSeparator" type="VSeparator" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Stats" type="Control" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/Stats"]
+columns = 2
+
+[node name="LabelDamage" type="Label" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/Stats/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Damage:"
+
+[node name="Damage" type="Label" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/Stats/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "11
+"
+horizontal_alignment = 2
+
+[node name="LabelArmor" type="Label" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/Stats/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Armor:"
+
+[node name="Armor" type="Label" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/Stats/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "11
+"
+horizontal_alignment = 2
+
+[node name="LabelHealth" type="Label" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/Stats/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Health:"
+
+[node name="Health" type="Label" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/Stats/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "11
+"
+horizontal_alignment = 2
+
+[node name="LabelAttackSpeed" type="Label" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/Stats/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Attack Speed: "
+
+[node name="AttackSpeed" type="Label" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/Stats/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "11
+"
+horizontal_alignment = 2
+
+[node name="LabelHealthRegen" type="Label" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/Stats/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Health Regen: "
+
+[node name="HealthRegen" type="Label" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/Stats/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "11
+"
+horizontal_alignment = 2
+
+[node name="VSeparator" type="PanelContainer" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 
 [node name="GridContainer" type="GridContainer" parent="MarginContainer/AspectRatioContainer/PanelContainer/MarginContainer/HBoxContainer"]
@@ -320,5 +406,25 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Tooltip" parent="." instance=ExtResource("14_k1nk8")]
-layout_mode = 0
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="HBoxContainer" type="Control" parent="Node2D"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 350.0
+offset_bottom = 166.0
+scale = Vector2(1, 1.0598)
+mouse_filter = 2
+
+[node name="TooltipCompare" parent="Node2D/HBoxContainer" instance=ExtResource("14_k1nk8")]
+layout_mode = 1
+size_flags_horizontal = 4
+
+[node name="Tooltip" parent="Node2D/HBoxContainer" instance=ExtResource("14_k1nk8")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -170.0
+offset_right = 0.0
+grow_horizontal = 0

@@ -61,7 +61,8 @@ func get_stat(type: String):
     var sum = 0
 
     for part in get_map().values():
-        sum += part.get(type)
+        if part != null:
+            sum += part.get(type)
 
     return sum
 

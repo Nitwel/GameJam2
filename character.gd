@@ -81,8 +81,6 @@ func start(body: Body):
 	health_regen = body.get_stat("health_regen")
 	health = max_health
 
-	print("Player: ", " ".join([health, armor, damage, attack_speed, health_regen]))
-
 	active = true
 
 	level_label.text = str(floor(body.level))

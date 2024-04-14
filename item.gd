@@ -31,6 +31,7 @@ static func get_random_item(type: Part, level: float) -> Item:
     var item = Item.new()
 
     var part_level = 0
+    var stat_count = pick([randf_range(1, 2), randf_range(2, 3), randf_range(3, 4), randf_range(4, 5)], level)
 
     match type:
         Part.HEAD:
@@ -50,11 +51,21 @@ static func get_random_item(type: Part, level: float) -> Item:
             item.texture = extrimity_textures[part_level]
 
     item.part = type
-    item.damage = randf_range([2, 8, 32][part_level], [8, 32, 128][part_level]) * level
-    item.armor = randf_range([1, 5, 10][part_level], [5, 10, 30][part_level]) * level
-    item.health = randf_range([5, 20, 80][part_level], [20, 80, 320][part_level]) * level
-    item.attack_speed = randf_range([0.001, 0.002, 0.004][part_level], [0.002, 0.004, 0.008][part_level]) * level
-    item.health_regen = randf_range([0.1, 0.2, 0.4][part_level], [0.2, 0.4, 0.8][part_level]) * level
+
+    var stats = {
+        "damage": randf_range([2, 8, 32][part_level], [8, 32, 128][part_level]) * level,
+        "armor": randf_range([1, 5, 10][part_level], [5, 10, 30][part_level]) * level,
+        "health": randf_range([5, 20, 80][part_level], [20, 80, 320][part_level]) * level,
+        "attack_speed": randf_range([0.001, 0.002, 0.004][part_level], [0.002, 0.004, 0.008][part_level]) * level,
+        "health_regen": randf_range([0.1, 0.2, 0.4][part_level], [0.2, 0.4, 0.8][part_level]) * level
+    }
+
+    for i in range(stat_count):
+        var random_index = randi() % stats.values().size()
+        var stat = stats.keys()[random_index]
+        item[stat] = stats[stat]
+        stats.erase(stat)
+
     return item
 
 static func pick(list: Array, level: float):

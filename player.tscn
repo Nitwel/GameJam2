@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://5jqcychw4wpw"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_7qoxl"]
-[ext_resource type="Texture2D" uid="uid://buubrphxe7rmj" path="res://assets/universal-lpc-sprite_male_01_walk-3frame.png" id="2_wkxf4"]
+[ext_resource type="Texture2D" uid="uid://c2rjm0fghsiiv" path="res://assets/universal-lpc-sprite_male_01_walk-3frame.png" id="2_wkxf4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_slkju"]
 radius = 75.0
