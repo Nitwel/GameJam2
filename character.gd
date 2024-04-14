@@ -95,6 +95,7 @@ func start():
 
 func stop():
 	active = false
+	animation.stop()
 
 
 func load_from_inventory():

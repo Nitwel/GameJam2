@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://c7cinvg4thke4"]
+[gd_scene load_steps=30 format=3 uid="uid://c7cinvg4thke4"]
 
 [ext_resource type="Texture2D" uid="uid://dwhtng0wjejo0" path="res://assets/Extrimity_Basic.svg" id="1_00lww"]
 [ext_resource type="Script" path="res://character.gd" id="1_fdlnb"]
@@ -16,6 +16,9 @@
 [ext_resource type="Texture2D" uid="uid://b1v4ljbutd2xd" path="res://assets/Body_Mutant.svg" id="12_jq4xi"]
 [ext_resource type="Texture2D" uid="uid://c2r5emulftc01" path="res://assets/Head_Basic.svg" id="14_7j23i"]
 [ext_resource type="Texture2D" uid="uid://cs2codp3a82et" path="res://assets/Head_Mutant.svg" id="16_tedch"]
+[ext_resource type="AudioStream" uid="uid://ctysxk6kv0jd0" path="res://assets/sound/IMPACT_LOW_THUD_10.mp3" id="17_c1r3u"]
+[ext_resource type="AudioStream" uid="uid://d4ixf36dqo5ml" path="res://assets/sound/PUNCH_DESIGNED_LIGHT_78.mp3" id="18_icblw"]
+[ext_resource type="AudioStream" uid="uid://o1uchgusq02g" path="res://assets/sound/PUNCH_PERCUSSIVE_HEAVY_06.mp3" id="19_rtd2i"]
 
 [sub_resource type="Animation" id="Animation_86xwy"]
 length = 0.001
@@ -399,6 +402,15 @@ tracks/6/keys = {
 "values": [0.0, -0.0872665, 0.0]
 }
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_f8gb2"]
+streams_count = 3
+stream_0/stream = ExtResource("19_rtd2i")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("18_icblw")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("17_c1r3u")
+stream_2/weight = 1.0
+
 [sub_resource type="Animation" id="Animation_7s3mw"]
 resource_name = "kick"
 length = 1.1
@@ -548,6 +560,30 @@ tracks/11/keys = {
 "method": &"attack"
 }]
 }
+tracks/12/type = "audio"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("AudioStreamPlayer")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": SubResource("AudioStreamRandomizer_f8gb2")
+}],
+"times": PackedFloat32Array(0.5)
+}
+tracks/12/use_blend = true
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_hgrq3"]
+streams_count = 3
+stream_0/stream = ExtResource("17_c1r3u")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("18_icblw")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("19_rtd2i")
+stream_2/weight = 1.0
 
 [sub_resource type="Animation" id="Animation_b28xw"]
 resource_name = "punsh"
@@ -589,6 +625,21 @@ tracks/2/keys = {
 "method": &"attack"
 }]
 }
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": SubResource("AudioStreamRandomizer_hgrq3")
+}],
+"times": PackedFloat32Array(0.6)
+}
+tracks/3/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gs87w"]
 _data = {
@@ -1016,7 +1067,7 @@ rest = Transform2D(1, 0, 0, 1, 50, 72)
 [node name="HandL" type="Bone2D" parent="Skeleton2D/Hip/Chest/ArmL/ForearmL"]
 position = Vector2(9, 98)
 rotation = 0.0840159
-scale = Vector2(2.29641, 0.999993)
+scale = Vector2(2.29641, 0.999992)
 rest = Transform2D(2.28831, 0.192708, -0.0839168, 0.996473, 9, 98)
 
 [node name="LegR" type="Bone2D" parent="Skeleton2D/Hip"]
@@ -1096,3 +1147,5 @@ size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 40
 text = "1"
 horizontal_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
