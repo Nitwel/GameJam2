@@ -48,13 +48,11 @@ var disabled = false:
 	set(value):
 		disabled = value
 		visible = !value
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE if visible else Input.MOUSE_MODE_CAPTURED)
 
 func _ready():
 	tooltip.visible = false
 	close_btn.pressed.connect(func():
-		visible=false
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		main.toggle_inventory()
 	)
 
 	var start_body = Body.get_random_body(25)
@@ -100,7 +98,7 @@ func update_tooltip():
 	elif hovering != null&&dragging == null:
 		tooltip.item = hovering
 		tooltip_compare.item = null
-		
+
 		tooltip.compare = null
 		tooltip_compare.compare = null
 	elif hovering == null&&dragging != null:
@@ -117,17 +115,13 @@ func update_tooltip():
 		tooltip_compare.compare = dragging
 
 func _process(delta):
+	if main.menu.visible:
+		return
+
 	if Input.is_action_just_released("click")&&dragging != null:
 		dragging = null
 
 	tooltip_container.position = get_local_mouse_position() - Vector2(tooltip_compare.size.x + 5, 0)
-
-	if disabled:
-		return
-
-	if Input.is_action_just_pressed("inventory"):
-		visible = !visible
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE if visible else Input.MOUSE_MODE_CAPTURED)
 
 func add_item(item: Item):
 	for slot in inventory.get_children():

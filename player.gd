@@ -7,6 +7,9 @@ extends CharacterBody2D
 @onready var animation_player = $Sprite2D
 
 func _physics_process(delta):
+	if main.menu.visible:
+		return
+
 	var moved = false
 
 	var direction: Vector2 = Input.get_vector("move_left", "move_right", "move_up", "move_down")
