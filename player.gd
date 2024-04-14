@@ -57,7 +57,7 @@ func _physics_process(delta):
 		for body in action_area.get_overlapping_bodies():
 			#print(body, body is Boss)
 			if body is Bush and trigger_bush:
-				main.start_battle(body.level)
+				main.start_battle(body.level + floor(randf_range( - 3, 2)))
 			if body is Boss:
 				boss_area = body
 

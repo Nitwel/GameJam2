@@ -45,6 +45,8 @@ var active = false
 
 		scale.x = -1 if flipped else 1
 		bar.scale.x = -1 if flipped else 1
+		name_label.pivot_offset = name_label.size / 2
+		name_label.scale.x = -1 if flipped else 1
 
 @export var enemy: BattleCharacter
 @export var body: Body
