@@ -1,0 +1,134 @@
+[gd_resource type="Resource" script_class="Body" load_steps=18 format=3 uid="uid://cuwrrwaewpxkr"]
+
+[ext_resource type="Script" path="res://item.gd" id="1_53xe8"]
+[ext_resource type="Texture2D" uid="uid://cx6iup5ua7tmq" path="res://assets/Head_Basic.svg" id="2_3i704"]
+[ext_resource type="Script" path="res://body.gd" id="3_njh0u"]
+[ext_resource type="Texture2D" uid="uid://d1r33v8nq7w4l" path="res://assets/Extrimity_Basic.svg" id="3_v8dfp"]
+[ext_resource type="Texture2D" uid="uid://d1yygm4yn8ow1" path="res://assets/Foot_Basic.svg" id="4_eqyu0"]
+[ext_resource type="Texture2D" uid="uid://mlwu5kp36fk2" path="res://assets/Hand_Basic.svg" id="5_uht3b"]
+[ext_resource type="Texture2D" uid="uid://dvgqqi72imcil" path="res://assets/Body_Basic.svg" id="7_fpe22"]
+
+[sub_resource type="Resource" id="Resource_wdbn6"]
+script = ExtResource("1_53xe8")
+texture = ExtResource("2_3i704")
+name = "Rockys Head"
+part = 1
+damage = 1.5
+armor = 2.0
+health = 40.0
+attack_speed = 0.1
+health_regen = 0.02
+
+[sub_resource type="Resource" id="Resource_6oebb"]
+script = ExtResource("1_53xe8")
+texture = ExtResource("3_v8dfp")
+name = "Rockys Arm"
+part = 5
+damage = 1.5
+armor = 2.0
+health = 40.0
+attack_speed = 0.1
+health_regen = 0.02
+
+[sub_resource type="Resource" id="Resource_b5u58"]
+script = ExtResource("1_53xe8")
+texture = ExtResource("4_eqyu0")
+name = "Rockys Foot"
+part = 3
+damage = 1.5
+armor = 2.0
+health = 40.0
+attack_speed = 0.1
+health_regen = 0.02
+
+[sub_resource type="Resource" id="Resource_slhvj"]
+script = ExtResource("1_53xe8")
+texture = ExtResource("5_uht3b")
+name = "Rockys Hand"
+part = 4
+damage = 1.5
+armor = 2.0
+health = 40.0
+attack_speed = 0.1
+health_regen = 0.02
+
+[sub_resource type="Resource" id="Resource_ahxs1"]
+script = ExtResource("1_53xe8")
+texture = ExtResource("3_v8dfp")
+name = "Rockys Leg"
+part = 5
+damage = 1.5
+armor = 2.0
+health = 40.0
+attack_speed = 0.1
+health_regen = 0.02
+
+[sub_resource type="Resource" id="Resource_6opqf"]
+script = ExtResource("1_53xe8")
+texture = ExtResource("3_v8dfp")
+name = "Rockys Arm"
+part = 5
+damage = 1.5
+armor = 2.0
+health = 40.0
+attack_speed = 0.1
+health_regen = 0.02
+
+[sub_resource type="Resource" id="Resource_qtwkl"]
+script = ExtResource("1_53xe8")
+texture = ExtResource("4_eqyu0")
+name = "Rockys Foot"
+part = 3
+damage = 1.5
+armor = 2.0
+health = 40.0
+attack_speed = 0.1
+health_regen = 0.02
+
+[sub_resource type="Resource" id="Resource_l3uam"]
+script = ExtResource("1_53xe8")
+texture = ExtResource("5_uht3b")
+name = "Rockys Hand"
+part = 4
+damage = 1.5
+armor = 2.0
+health = 40.0
+attack_speed = 0.1
+health_regen = 0.02
+
+[sub_resource type="Resource" id="Resource_4jyjp"]
+script = ExtResource("1_53xe8")
+texture = ExtResource("3_v8dfp")
+name = "Rockys Leg"
+part = 5
+damage = 1.5
+armor = 2.0
+health = 40.0
+attack_speed = 0.1
+health_regen = 0.02
+
+[sub_resource type="Resource" id="Resource_2yyi7"]
+script = ExtResource("1_53xe8")
+texture = ExtResource("7_fpe22")
+name = "Rockys Torso"
+part = 2
+damage = 1.5
+armor = 2.0
+health = 40.0
+attack_speed = 0.1
+health_regen = 0.02
+
+[resource]
+script = ExtResource("3_njh0u")
+name = "Frank"
+level = 1.0
+head = SubResource("Resource_wdbn6")
+torso = SubResource("Resource_2yyi7")
+left_arm = SubResource("Resource_6oebb")
+right_arm = SubResource("Resource_6opqf")
+left_leg = SubResource("Resource_ahxs1")
+right_leg = SubResource("Resource_4jyjp")
+left_foot = SubResource("Resource_b5u58")
+right_foot = SubResource("Resource_qtwkl")
+left_hand = SubResource("Resource_slhvj")
+right_hand = SubResource("Resource_l3uam")

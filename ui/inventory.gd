@@ -52,7 +52,7 @@ func _ready():
 		main.toggle_inventory()
 	)
 
-	var start_body = Body.get_random_body(10)
+	var start_body = Body.get_random_body(2)
 	head.item = start_body.head
 	torso.item = start_body.torso
 	leg_r.item = start_body.left_leg
